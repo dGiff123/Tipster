@@ -22,10 +22,11 @@ public class Tippster {
         String country = scan.nextLine();
 
         System.out.println("How much was your meal?");
-        double cost = scan.nextInt();
+        double cost = scan.nextDouble();
 
         Tippster tippster = new Tippster();
         double tip = tippster.calculateTip(country, cost);
-        System.out.println("The tip amount is $" + tip);
+        double finalTip = tip - (tip % 0.01);
+        System.out.println("The tip amount is $" + finalTip);
     }
 }
