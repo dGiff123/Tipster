@@ -1,0 +1,31 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Tippster {
+
+    private static Map<String, Double> countryPercentageMap = new HashMap<>();
+    static {
+        countryPercentageMap.put("United States", 0.20);
+        // fill out for rest of countries
+    }
+
+    public double calculateTip(String country, double cost) {
+        double percentage = countryPercentageMap.getOrDefault(country, 0.1);
+        return percentage * cost;
+    }
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("What country would you like to tip in?");
+        String country = scan.nextLine();
+
+        System.out.println("How much was your meal?");
+        double cost = scan.nextInt();
+
+        Tippster tippster = new Tippster();
+        double tip = tippster.calculateTip(country, cost);
+        System.out.println("The tip amount is $" + tip);
+    }
+}
