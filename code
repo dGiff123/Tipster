@@ -1,19 +1,198 @@
+package com.example.tipster.ui.dashboard;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Tippster {
+public class Tipster {
 
     private static Map<String, Double> countryPercentageMap = new HashMap<>();
     static {
+        // 20% tip below
         countryPercentageMap.put("United States", 0.20);
-        // fill out for rest of countries
+        countryPercentageMap.put("US", 0.20);
+        // 17% tip below
+        countryPercentageMap.put("Canada", 0.17);
+        // 15% tip below
+        countryPercentageMap.put("Belize", 0.015);
+        countryPercentageMap.put("Mexico", 0.15);
+        countryPercentageMap.put("Armenia", 0.15);
+        countryPercentageMap.put("Dominican Republic", 0.15);
+        countryPercentageMap.put("Norway", 0.15);
+        countryPercentageMap.put("Serbia", 0.15);
+        // 14% tip below
+        countryPercentageMap.put("Jamaica", 0.14);
+        // 13% tip below
+        countryPercentageMap.put("Mauritania", 0.13);
+        // 12% tip below
+        countryPercentageMap.put("Algeria", 0.12);
+        countryPercentageMap.put("Antigua", 0.12);
+        countryPercentageMap.put("Barbadu", 0.12);
+        countryPercentageMap.put("Argentina", 0.12);
+        countryPercentageMap.put("Bahrain", 0.12);
+        countryPercentageMap.put("Cameroon", 0.12);
+        countryPercentageMap.put("Cuba", 0.12);
+        countryPercentageMap.put("Guyana", 0.12);
+        countryPercentageMap.put("Honduras", 0.12);
+        countryPercentageMap.put("Macedonia", 0.12);
+        countryPercentageMap.put("Mauritius", 0.12);
+        countryPercentageMap.put("Poland", 0.12);
+        countryPercentageMap.put("Qatar", 0.12);
+        countryPercentageMap.put("Russia", 0.12);
+        countryPercentageMap.put("Saudi Arabia", 0.12);
+        countryPercentageMap.put("United Arab Emirates", 0.12);
+        countryPercentageMap.put("UAE", 0.12);
+        countryPercentageMap.put("Israel", 0.12);
+        // 10% tip below
+        countryPercentageMap.put("Albania", 0.1);
+        countryPercentageMap.put("Angola", 0.1);
+        countryPercentageMap.put("Benin", 0.1);
+        countryPercentageMap.put("Bolivia", 0.1);
+        countryPercentageMap.put("Bosnia", 0.1);
+        countryPercentageMap.put("Botswana", 0.1);
+        countryPercentageMap.put("Bulgaria", 0.1);
+        countryPercentageMap.put("Congo", 0.1);
+        countryPercentageMap.put("Ivory Coast", 0.1);
+        countryPercentageMap.put("Croatia", 0.1);
+        countryPercentageMap.put("Cyprus", 0.1);
+        countryPercentageMap.put("Czech Republic", 0.1);
+        countryPercentageMap.put("Dominica", 0.1);
+        countryPercentageMap.put("Egypt", 0.1);
+        countryPercentageMap.put("England", 0.1);
+        countryPercentageMap.put("Equatorial Guinea", 0.1);
+        countryPercentageMap.put("Eritrea", 0.1);
+        countryPercentageMap.put("Estonia", 0.1);
+        countryPercentageMap.put("France", 0.1);
+        countryPercentageMap.put("Gabon", 0.1);
+        countryPercentageMap.put("Greece", 0.1);
+        countryPercentageMap.put("Grenada", 0.1);
+        countryPercentageMap.put("Guatemala", 0.1);
+        countryPercentageMap.put("Hungary", 0.1);
+        countryPercentageMap.put("Ireland", 0.1);
+        countryPercentageMap.put("Italy", 0.1);
+        countryPercentageMap.put("Kenya", 0.1);
+        countryPercentageMap.put("Kuwait", 0.1);
+        countryPercentageMap.put("Latvia", 0.1);
+        countryPercentageMap.put("Lebanon", 0.1);
+        countryPercentageMap.put("Malta", 0.1);
+        countryPercentageMap.put("Mongolia", 0.1);
+        countryPercentageMap.put("Montenegro", 0.1);
+        countryPercentageMap.put("Morocco", 0.1);
+        countryPercentageMap.put("Myanmar", 0.1);
+        countryPercentageMap.put("Namibia", 0.1);
+        countryPercentageMap.put("Nicaragua", 0.1);
+        countryPercentageMap.put("Oman", 0.1);
+        countryPercentageMap.put("Palestine", 0.1);
+        countryPercentageMap.put("Panama", 0.1);
+        countryPercentageMap.put("Paraguay", 0.1);
+        countryPercentageMap.put("Peru", 0.1);
+        countryPercentageMap.put("Philippines", 0.1);
+        countryPercentageMap.put("Portugal", 0.1);
+        countryPercentageMap.put("Romania", 0.1);
+        countryPercentageMap.put("Saint Lucia", 0.1);
+        countryPercentageMap.put("Scotland", 0.1);
+        countryPercentageMap.put("Senegal", 0.1);
+        countryPercentageMap.put("Slovakia", 0.1);
+        countryPercentageMap.put("South Africa", 0.1);
+        countryPercentageMap.put("Spain", 0.1);
+        countryPercentageMap.put("Sri Lanka", 0.1);
+        countryPercentageMap.put("Swaziland", 0.1);
+        countryPercentageMap.put("Sweden", 0.1);
+        countryPercentageMap.put("Tanzania", 0.1);
+        countryPercentageMap.put("Tunisia", 0.1);
+        countryPercentageMap.put("Turkey", 0.1);
+        countryPercentageMap.put("Uganda", 0.1);
+        countryPercentageMap.put("Ukraine", 0.1);
+        countryPercentageMap.put("United Kingdom", 0.1);
+        countryPercentageMap.put("UK", 0.1);
+        countryPercentageMap.put("Uruguay", 0.1);
+        countryPercentageMap.put("Wales", 0.1);
+        countryPercentageMap.put("Zambia", 0.1);
+        countryPercentageMap.put("Zimbabwe", 0.1);
+        countryPercentageMap.put("Austria", 0.1);
+        countryPercentageMap.put("Lithuania", 0.1);
+        countryPercentageMap.put("San Marino", 0.1);
+        // 7.5% tip below
+        countryPercentageMap.put("The Gambia", 0.075);
+        // 8% tip below
+        countryPercentageMap.put("Andorra", 0.08);
+        countryPercentageMap.put("Belarus", 0.08);
+        countryPercentageMap.put("Cape Verde", 0.08);
+        countryPercentageMap.put("Ethiopia", 0.08);
+        countryPercentageMap.put("Germany", 0.08);
+        countryPercentageMap.put("Ghana", 0.08);
+        countryPercentageMap.put("India", 0.08);
+        countryPercentageMap.put("Indonesia", 0.08);
+        countryPercentageMap.put("Jordan", 0.08);
+        countryPercentageMap.put("Liechtenstein", 0.08);
+        countryPercentageMap.put("Madagascar", 0.08);
+        countryPercentageMap.put("Marshall Islands", 0.08);
+        countryPercentageMap.put("Netherlands", 0.08);
+        countryPercentageMap.put("Turkmenistan", 0.08);
+        countryPercentageMap.put("Tuvalu", 0.08);
+        countryPercentageMap.put("Venezuela", 0.08);
+        countryPercentageMap.put("Vietnam", 0.08);
+        // 5% tip below
+        countryPercentageMap.put("Bangladesh", 0.05);
+        // No tip below
+        countryPercentageMap.put("Australia", 0.0);
+        countryPercentageMap.put("Cambodia", 0.0);
+        countryPercentageMap.put("China", 0.0);
+        countryPercentageMap.put("Costa Rica", 0.0);
+        countryPercentageMap.put("Denmark", 0.0);
+        countryPercentageMap.put("Dijibouti", 0.0);
+        countryPercentageMap.put("Fiji", 0.0);
+        countryPercentageMap.put("Japan", 0.0);
+        countryPercentageMap.put("Kosovo", 0.0);
+        countryPercentageMap.put("Laos", 0.0);
+        countryPercentageMap.put("Moldova", 0.0);
+        countryPercentageMap.put("New Zealand", 0.0);
+        countryPercentageMap.put("Nigeria", 0.0);
+        countryPercentageMap.put("Samoa", 0.0);
+        countryPercentageMap.put("Singapore", 0.0);
+        countryPercentageMap.put("South Korea", 0.0);
+        countryPercentageMap.put("Taiwan", 0.0);
+        countryPercentageMap.put("Tajikistan", 0.0);
+        countryPercentageMap.put("Vanuatu", 0.0);
+        // Service Included below
+        countryPercentageMap.put("Azerbaijan", 0.0);
+        countryPercentageMap.put("Bahamas", 0.0);
+        countryPercentageMap.put("Barbados", 0.0);
+        countryPercentageMap.put("Belgium", 0.0);
+        countryPercentageMap.put("Bhutan", 0.0);
+        countryPercentageMap.put("Brazil", 0.0);
+        countryPercentageMap.put("Brunei", 0.0);
+        countryPercentageMap.put("Chile", 0.0);
+        countryPercentageMap.put("Columbia", 0.0);
+        countryPercentageMap.put("Ecuador", 0.0);
+        countryPercentageMap.put("El Salvador", 0.0);
+        countryPercentageMap.put("Finland", 0.0);
+        countryPercentageMap.put("Georgia", 0.0);
+        countryPercentageMap.put("Iceland", 0.0);
+        countryPercentageMap.put("Iran", 0.0);
+        countryPercentageMap.put("Kazakhstan", 0.0);
+        countryPercentageMap.put("Luxembourg", 0.0);
+        countryPercentageMap.put("Malaysia", 0.0);
+        countryPercentageMap.put("Maldives", 0.0);
+        countryPercentageMap.put("Monaco", 0.0);
+        countryPercentageMap.put("Nepal", 0.0);
+        countryPercentageMap.put("Pakistan", 0.0);
+        countryPercentageMap.put("Saint Kitts", 0.0);
+        countryPercentageMap.put("Nevis", 0.0);
+        countryPercentageMap.put("Seychelles", 0.0);
+        countryPercentageMap.put("Switzerland", 0.0);
+        countryPercentageMap.put("Thailand", 0.0);
+        countryPercentageMap.put("Trinidad", 0.0);
+        countryPercentageMap.put("Tobago", 0.0);
+        countryPercentageMap.put("Uzbekistan", 0.0);
+
+
     }
 
     public double calculateTip(String country, double cost) {
-        double percentage = countryPercentageMap.getOrDefault(country, 0.1);
+        double percentage = countryPercentageMap.getOrDefault(country, 0d);
         return percentage * cost;
     }
+
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
@@ -24,9 +203,8 @@ public class Tippster {
         System.out.println("How much was your meal?");
         double cost = scan.nextDouble();
 
-        Tippster tippster = new Tippster();
-        double tip = tippster.calculateTip(country, cost);
-        double finalTip = tip - (tip % 0.01);
-        System.out.println("The tip amount is $" + finalTip);
+        Tipster tipster = new Tipster();
+        double tip = tipster.calculateTip(country, cost);
+        System.out.println("The tip amount is $%.2f" + tip);
     }
 }
